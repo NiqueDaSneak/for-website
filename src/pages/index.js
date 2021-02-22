@@ -2,14 +2,12 @@ import React, {useEffect} from "react"
 import video from '../assets/media/test.mp4'
 import logoDark from '../assets/imgs/logo-dark.svg'
 import logoLight from '../assets/imgs/logo-light.svg'
-
 import '../assets/styles/homeStyles.css'
 import useDarkMode from 'use-dark-mode';
 
 const Home = () => {
   const EmbedVideo = ({src, className}) => {
     return (
-
       <div
         style={{ height: '100%', width: '100vw'}}
         dangerouslySetInnerHTML={{
@@ -27,10 +25,6 @@ const Home = () => {
   }
 
   const darkMode = useDarkMode();
-
-  useEffect(() => {
-    console.log('darkMode.value: ', darkMode.value)
-  }, [darkMode])
   
   return (
     <div>
