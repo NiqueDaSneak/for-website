@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1650px" height="1650px" viewBox="0 0 1650 1650" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group 18</title>
+    <defs>
+        <radialGradient cx="-5.03922283%" cy="-12.9992217%" fx="-5.03922283%" fy="-12.9992217%" r="91.6669186%" id="radialGradient-1">
+            <stop stop-color="#222220" offset="0%"></stop>
+            <stop stop-color="#E1E1E1" offset="100%"></stop>
+        </radialGradient>
+        <linearGradient x1="18.3317236%" y1="63.9566488%" x2="50%" y2="100%" id="linearGradient-2">
+            <stop stop-color="#009500" offset="0%"></stop>
+            <stop stop-color="#E1E1E1" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-18">
+            <rect id="Rectangle" fill="url(#radialGradient-1)" x="0" y="0" width="1650" height="1650" rx="354"></rect>
+            <path d="M968.308,286.414 L664.188906,805.27911 L893.688156,805.27911 L893.688156,576.62911 L1195.91604,576.62911 L1195.91604,805.27911 L1364,805.27911 L1364,1106.9434 L1195.91604,1106.9434 L1195.91604,1364.41482 L883.991004,1364.41482 L883.991004,1106.9434 L286,1106.9434 L286,859.07911 L632.113,286.414 L968.308,286.414 Z" id="Combined-Shape-Copy-6" fill="url(#linearGradient-2)" fill-rule="nonzero"></path>
+        </g>
+    </g>
+</svg>
