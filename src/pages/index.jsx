@@ -131,9 +131,8 @@ const Home = () => {
             width: '100vw',
             height: '100vh',
             backgroundColor: '#222220',
-            backgroundImage: `url('https://www.transparenttextures.com/patterns/asfalt-dark.png')`
-          }}
-        >
+            backgroundImage: `url('https://www.transparenttextures.com/patterns/asfalt-light.png')`
+          }}>
           <div
             style={{
               width: '64%',
