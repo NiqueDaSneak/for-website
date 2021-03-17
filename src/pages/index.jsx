@@ -1,5 +1,3 @@
-/* eslint-disable react/no-danger */
-/* eslint-disable react/prop-types */
 import React, {useState} from 'react'
 import useDarkMode from 'use-dark-mode'
 import {
@@ -7,34 +5,13 @@ import {
   MobileView,
 } from 'react-device-detect'
 import axios from 'axios'
-import video from '../assets/video/run1.mp4'
+import video from '../assets/video/run2.mp4'
 import logoDark from '../assets/imgs/logo-dark.svg'
 import logoLight from '../assets/imgs/logo-light.svg'
 import '../assets/styles/homeStyles.css'
+import EmbedVideo from '../components/EmbedVideo'
 
 const Home = () => {
-  const EmbedVideo = ({
-    src, className 
-  }) => (
-    <div
-      style={{
-        height: '10vh',
-        width: '100vw',
-      }}
-      dangerouslySetInnerHTML={{
-        __html: `
-         <video
-          width='${100}%'
-          loop 
-          muted 
-          autoplay 
-          playsInline 
-          src='${src}' 
-          class='${className}'/>,
-       `,
-      }}
-    />
-  )
 
   const [email, setEmail] = useState('')
 
@@ -42,28 +19,61 @@ const Home = () => {
 
   return (
     <>
-      <form onSubmit={(e) => {
-        e.preventDefault();
-        console.log(email);
+      <MobileView>
+        <div style={{
+          display: 'flex',
+          flexDirection: 'column'
+        }}>
+          <div style={{
+            zIndex: 1,
+            width: '100%',
+          }}>
+            <div style={{
+              height: '100vh',
+              width: '100%',
 
-        try {
-          axios.post(
-            'https://sheet.best/api/sheets/a490c2d4-3aca-479f-a9ba-4861562c47be', { email }
-          )
-        } catch (err) {
-          console.log(
-            'err: ', err
-          )
-        }
-      }}>
-        <MobileView>
-          <div>
+            }}>
+              <img
+                alt=''
+                style={{ width: '40%' }}
+                src={logoDark}
+              />
+            </div>
+            <div style={{
+              height: '100vh',
+              width: '100%',
+              backgroundColor: 'blue' 
+            }} />
+          </div>
+          <EmbedVideo
+            src={video}
+          />
+        </div>
+
+      </MobileView>
+      <BrowserView>
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'row',
+            width: '100vw',
+            height: '100vh',
+            backgroundColor: '#222220',
+            backgroundImage: `url('https://www.transparenttextures.com/patterns/asfalt-light.png')`
+          }}>
+          <div
+            style={{
+              width: '64%',
+              height: '100%',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-evenly',
+              alignItems: 'center',
+            }}
+          >
             <div
               style={{
-                width: '70%',
-                marginLeft: '15%',
-                position: 'absolute',
-                top: '30%',
+                width: '20%',
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
@@ -71,121 +81,13 @@ const Home = () => {
             >
               <img
                 alt=''
-                style={{ width: '40%' }}
-                src={darkMode.value ? logoDark : logoLight}
+                style={{
+                  width: '100%',
+                  marginBottom: 20
+                }}
+                src={logoDark}
               />
               {/* <span
-                style={{
-                  fontFamily: 'sans-serif',
-                  fontSize: '16pt',
-                  color: darkMode.value ? '#222220' : '#e1e1e1',
-                }}
-              >
-                For
-              </span> */}
-              <span
-                style={{
-                  fontFamily: 'sans-serif',
-                  fontSize: '16pt',
-                  color: '#e1e1e1',
-                }}
-              >
-              What are you here for?
-              </span>
-            </div>
-            {/* <div
-              style={{
-                borderRadius: 10,
-                backdropFilter: 'blur(9px)',
-                opacity: 0.9,
-                backgroundColor: darkMode.value ? '#222220' : '#e1e1e1',
-                height: '25%',
-                width: '70%',
-                marginLeft: '5%',
-                position: 'absolute',
-                bottom: 90,
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'space-around',
-                alignItems: 'center',
-              }}
-            >
-              <span
-                style={{
-                  fontSize: '16pt',
-                  color: darkMode.value ? '#e1e1e1' : '#222220',
-                }}
-              >
-              Put your email to get updates!
-              </span>
-              <input
-                placeholder='elon.musk@spaceX.com'
-                style={{
-                  width: 300,
-                  padding: 10,
-                  backgroundColor: darkMode.value ? '#515151' : '#b1b1b1',
-                  color: darkMode.value ? '#b1b1b1' : '#515151',
-                  fontSize: '12pt',
-                  outline: 'none',
-                }}
-                value={email}
-                onChange={e => setEmail(e.target.value)}
-              />
-              <button
-                type='submit'
-                style={{
-                  width: 150,
-                  padding: 10,
-                  backgroundColor: '#009500',
-                  color: 'white',
-                  fontSize: '12pt',
-                  borderRadius: 10,
-                }}>
-              Submit
-              </button>
-            </div> */}
-            <EmbedVideo
-              src={video}
-            />
-          </div>
-        </MobileView>
-        <BrowserView>
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'row',
-              width: '100vw',
-              height: '100vh',
-              backgroundColor: '#222220',
-              backgroundImage: `url('https://www.transparenttextures.com/patterns/asfalt-light.png')`
-            }}>
-            <div
-              style={{
-                width: '64%',
-                height: '100%',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'space-evenly',
-                alignItems: 'center',
-              }}
-            >
-              <div
-                style={{
-                  width: '20%',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                }}
-              >
-                <img
-                  alt=''
-                  style={{
-                    width: '100%',
-                    marginBottom: 20
-                  }}
-                  src={logoDark}
-                />
-                {/* <span
                   style={{
                     fontFamily: 'sans-serif',
                     fontSize: '24pt',
@@ -194,17 +96,17 @@ const Home = () => {
                 >
                   For
                 </span> */}
-                <span
-                  style={{
-                    fontFamily: 'sans-serif',
-                    fontSize: '16pt',
-                    color: darkMode.value ? '#222220' : '#e1e1e1',
-                  }}
-                >
+              <span
+                style={{
+                  fontFamily: 'sans-serif',
+                  fontSize: '16pt',
+                  color: darkMode.value ? '#222220' : '#e1e1e1',
+                }}
+              >
               What are you here for?
-                </span>
-              </div>
-              {/* <div
+              </span>
+            </div>
+            {/* <div
                 style={{
                   borderRadius: 10,
                   backdropFilter: 'blur(9px)',
@@ -256,28 +158,27 @@ const Home = () => {
                 Submit
                 </button>
               </div> */}
-            </div>
-            <div
-              style={{
-                width: '36%',
-                height: '100%',
-                display: 'flex',
-                justifyContent: 'flex-end'
-              }}
-            >
-              <video
-                height='100%'
-                // poster=''
-                loop
-                muted
-                autoPlay
-                playsInline
-                src={video}
-              />
-            </div>
           </div>
-        </BrowserView>
-      </form>
+          <div
+            style={{
+              width: '36%',
+              height: '100%',
+              display: 'flex',
+              justifyContent: 'flex-end'
+            }}
+          >
+            <video
+              height='100%'
+              // poster=''
+              loop
+              muted
+              autoPlay
+              playsInline
+              src={video}
+            />
+          </div>
+        </div>
+      </BrowserView>
     </>
   )
 }
