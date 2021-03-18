@@ -217,6 +217,9 @@ const DesktopSite = () => {
             style={{
               fontSize: '16pt',
               width: '34%',
+              border: 'none',
+              padding: '1%',
+              borderRadius: '10px'
             }} />
           <button
             onClick={() => {

@@ -230,6 +230,10 @@ const MobileSite = () => {
               style={{
                 fontSize: '16pt',
                 width: '80%',
+                border: 'none',
+                padding: '2%',
+                borderRadius: '10px',
+
               }} />
             <button
               onClick={() => {
